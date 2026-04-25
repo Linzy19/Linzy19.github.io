@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Me – Zongying Lin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zongying Lin (林宗莹) — M.S. student at Peking University. Research on Generative Models, Protein Design, Drug Discovery.">
+<meta property="og:title" content="About Me – Zongying Lin">
+<meta property="og:site_name" content="Zongying Lin">
+<link rel="canonical" href="#">
+
+<!-- Google Webfonts — same as reference site -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic&display=swap' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* === Minimal Mistakes inspired — faithful clone === */
+
+/* Reset */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;touch-action:manipulation}
+body{margin:0;word-wrap:normal;color:#333332;background:#fff;font-family:'PT Serif',Georgia,serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+[data-lang="zh"] body{font-family:'Noto Serif SC','PT Serif',serif}
+[data-lang="zh"] h1,[data-lang="zh"] h2,[data-lang="zh"] h3,[data-lang="zh"] h4,[data-lang="zh"] h5,[data-lang="zh"] h6,[data-lang="zh"] .navigation-wrapper{font-family:'Noto Sans SC','PT Sans Narrow',sans-serif}
+img{border:0;max-width:100%;height:auto;vertical-align:middle}
+::selection{background:#dadada;color:#343434}
+:focus{outline:none}
+a:focus-visible,button:focus-visible{outline:2px solid #333332;outline-offset:2px}
+.skip-link{position:absolute;left:-9999px}
+.skip-link:focus{left:1em;top:1em;background:#333332;color:#fff;padding:.5em 1em;z-index:10000}
+
+/* Typography — exact match to reference */
+h1,h2,h3,h4,h5,h6{color:#333332;font-family:'PT Sans Narrow',sans-serif;font-weight:700;margin-top:0;text-rendering:optimizeLegibility;line-height:1}
+h1{font-size:60px;margin-bottom:.5em}
+h2{font-size:48px;margin-bottom:.6em}
+h3{font-size:28px;margin-bottom:.8em}
+h4{font-size:20px;margin-bottom:.5em}
+p{margin:0 0 1.2em;text-indent:1.5em}
+p:first-of-type,.no-indent,.article-wrap>p:first-of-type{text-indent:0}
+a{color:#333332;text-decoration:none}
+p>a,li>a,em>a,a>em,footer a{text-decoration:none;border-bottom:1px dotted #b3b3b1}
+p>a:hover,li>a:hover,em>a:hover,footer a:hover{border-bottom:1px solid #b3b3b1}
+strong{font-weight:700;color:#1a1a1a}
+em{font-style:italic}
+hr{height:0;border:0;border-top:1px solid #d5d5d5;margin:2.5em 0 2em;box-sizing:content-box}
+ul,ol{margin:0 0 1.5em;padding-left:1.5em}
+ul li,ol li{margin-bottom:.5em}
+
+/* Top navigation bar — site name left, nav right */
+.navigation-wrapper{padding:2em 0 3em;font-family:'PT Sans Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:18px;overflow:hidden}
+.navigation-wrapper::after{content:'';display:table;clear:both}
+.site-name{float:left;width:83.333%;margin-left:8.333%;margin-right:8.333%;margin-bottom:1em}
+.site-name a{color:#333332;text-decoration:none;letter-spacing:1px}
+.top-navigation{float:left;width:83.333%;margin-left:8.333%;margin-right:8.333%;margin-bottom:1em}
+.top-navigation ul{list-style:none;margin:0;padding:0}
+.top-navigation li{display:inline;margin-right:25px}
+.top-navigation li a{color:#333332;text-decoration:none;border-bottom:0 solid transparent;transition:all .2s;letter-spacing:.5px}
+.top-navigation li a:hover{color:#000}
+.top-navigation-current{text-decoration:overline;text-underline-offset:0}
+.lang-switch{background:none;border:0;font-family:'PT Sans Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:18px;color:#333332;cursor:pointer;padding:0;letter-spacing:.5px}
+.lang-switch:hover{color:#000}
+
+/* Main area: 16.6% sidebar + 66.7% content (desktop) */
+#main{padding-bottom:3em;overflow:hidden}
+#main::after{content:'';display:table;clear:both}
+
+.article-author-top{float:left;width:16.666%;margin-left:4.166%;margin-right:4.166%}
+.article-author-top img.bio-photo{border-radius:100px;width:100px;height:100px;object-fit:cover;display:block}
+.article-author-top a,.article-author-top a:hover{border-bottom:0 solid transparent}
+.article-author-top p{font-size:80%;margin:0 0 .5em;text-indent:0;line-height:1.6}
+.article-author-top p a{color:#333332;border-bottom:0;display:inline-flex;align-items:center;gap:8px}
+.article-author-top p a:hover{color:#a32c2c}
+.article-author-top p i{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-size:15px;color:#555;flex-shrink:0}
+.article-author-top p a:hover i{color:#a32c2c}
+.bio-spacer{height:1.5em}
+
+article{float:left;width:66.667%;padding:0}
+.article-wrap{padding:0 1em 0 0}
+
+/* Floating portrait — just like reference */
+img.floatpic{float:right;margin:.3em 0 1em 1.5em;width:30%;max-width:260px;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+
+/* Secondary H2/H3 in article (smaller than H1) */
+.article-wrap h1{font-size:48px;margin-top:0;letter-spacing:-1px}
+.article-wrap h2{font-size:32px;margin-top:1.2em;letter-spacing:-.5px}
+.article-wrap h3{font-size:22px;margin-top:1em}
+
+/* Paper list — paper figure + description */
+.paper-item{overflow:hidden;margin-bottom:2em;padding-bottom:1.5em}
+.paper-item::after{content:'';display:table;clear:both}
+.paper-item:not(:last-child){border-bottom:1px dotted #e0e0e0}
+.paper-fig{float:left;width:38%;margin-right:24px;margin-bottom:8px}
+.paper-fig img{width:100%;border:1px solid #e0e0e0;border-radius:2px;display:block}
+.paper-fig a{border-bottom:0!important}
+.paper-fig a:hover img{border-color:#999}
+.paper-body{overflow:hidden}
+.paper-body h4{font-size:19px;margin-bottom:.3em;line-height:1.25;letter-spacing:.3px}
+.paper-body .venue{font-family:'PT Sans Narrow',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#8a6414;display:block;margin-bottom:.4em}
+.paper-body .venue.top{color:#a32c2c}
+.paper-body .venue.preprint{color:#666}
+.paper-body .authors{font-size:15px;margin:.3em 0;text-indent:0;font-style:italic;color:#555;line-height:1.5}
+.paper-body .authors .me{color:#333332;font-weight:700;font-style:normal}
+.paper-body .authors .star{color:#a32c2c;vertical-align:super;font-size:11px}
+.paper-body .paper-meta{font-size:14px;color:#666;margin:.3em 0 .6em;text-indent:0;line-height:1.5}
+.paper-body .paper-links{font-size:14px;text-indent:0;margin:0;font-family:'PT Sans Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.paper-body .paper-links a{display:inline-block;margin-right:12px;color:#333332;border-bottom:1px dotted #b3b3b1}
+.paper-body .paper-links a:hover{border-bottom:1px solid #333332}
+.paper-body .paper-links i{margin-right:4px}
+
+/* News list */
+.news-list li{margin-bottom:.8em;line-height:1.6}
+.news-list .news-date{font-family:'PT Sans Narrow',sans-serif;font-weight:700;color:#333332}
+
+/* Awards list */
+.awards-list{list-style:none;padding:0}
+.awards-list li{padding:.4em 0;border-bottom:1px dotted #e0e0e0;margin-bottom:0}
+.awards-list li::before{content:'◆';color:#a32c2c;margin-right:.6em;font-size:.8em}
+.awards-list .award-meta{color:#888;font-size:.88em;font-style:italic;float:right;margin-left:1em}
+
+/* Scholar live stats */
+.scholar-stats{display:flex;flex-wrap:wrap;gap:0;margin:1.5em 0 2em;border:1px solid #e0e0e0;background:#fafaf7;padding:0;align-items:stretch;position:relative}
+.scholar-stats .ss-item{flex:1;min-width:110px;padding:16px 12px;text-align:center;border-right:1px dotted #e0e0e0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.scholar-stats .ss-item:last-of-type{border-right:0}
+.scholar-stats .ss-num{font-family:'PT Sans Narrow',sans-serif;font-weight:700;font-size:34px;color:#333332;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.5px;transition:color .3s}
+.scholar-stats .ss-num.updating{color:#b3b3b1;animation:ssPulse 1s ease-in-out infinite}
+@keyframes ssPulse{0%,100%{opacity:.5}50%{opacity:1}}
+.scholar-stats .ss-label{font-family:'PT Sans Narrow',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:#888}
+.scholar-stats .ss-note{flex-basis:100%;border-top:1px dotted #e0e0e0;padding:10px 16px;text-align:center;font-size:12px;color:#888;font-style:italic}
+.scholar-stats .ss-note a{color:#a32c2c;border-bottom:0!important;font-style:normal}
+.scholar-stats .ss-note a:hover{color:#7a1f1f}
+.scholar-stats .ss-note strong{color:#333332;font-weight:700}
+.js-citations{font-variant-numeric:tabular-nums;transition:opacity .3s}
+
+/* WeChat modal */
+.wechat-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:10000;padding:20px}
+.wechat-modal.open{display:flex;animation:wxFade .25s ease}
+@keyframes wxFade{from{opacity:0}to{opacity:1}}
+.wechat-modal .wx-box{background:#fff;padding:28px 32px;max-width:360px;width:100%;text-align:center;border:1px solid #e0e0e0;position:relative}
+.wechat-modal h3{font-family:'PT Sans Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:22px;margin-bottom:14px;line-height:1}
+[data-lang="zh"] .wechat-modal h3{font-family:'Noto Sans SC','PT Sans Narrow',sans-serif;letter-spacing:2px}
+.wechat-modal .wx-id{font-family:'PT Sans Narrow',sans-serif;font-weight:700;font-size:28px;letter-spacing:2px;color:#07c160;padding:14px 0;border-top:1px dotted #e0e0e0;border-bottom:1px dotted #e0e0e0;margin:12px 0;font-variant-numeric:tabular-nums}
+.wechat-modal .wx-note{font-size:14px;color:#666;font-style:italic;line-height:1.6;margin-bottom:16px}
+.wechat-modal .wx-copy{display:inline-block;padding:10px 20px;background:#07c160;color:#fff;border:0;font-family:'PT Sans Narrow',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;margin-right:8px}
+.wechat-modal .wx-copy:hover{background:#05a452}
+.wechat-modal .wx-close{position:absolute;top:10px;right:14px;background:none;border:0;font-size:22px;color:#888;cursor:pointer;line-height:1}
+.wechat-modal .wx-close:hover{color:#333332}
+
+/* Entry (Education / Experience blocks) */
+.entry{margin-bottom:1.6em}
+.entry h4{font-size:19px;margin-bottom:.2em}
+.entry h4 .role{font-family:'PT Serif',serif;font-weight:400;font-style:italic;color:#666;font-size:16px;text-transform:none;letter-spacing:0}
+.entry .when{font-family:'PT Sans Narrow',sans-serif;font-weight:700;text-transform:uppercase;color:#888;font-size:13px;letter-spacing:1.5px;margin-bottom:.3em;display:block}
+.entry p,.entry ul{text-indent:0;font-size:16px;color:#444;margin-top:.4em}
+.entry ul{padding-left:1.4em}
+.entry ul li{margin-bottom:.2em}
+
+/* Footer — reference uses black bar */
+.footer-wrap{clear:both;margin-top:1em;padding:2em 0 3em;background:#000;overflow:hidden}
+.footer-wrap footer{float:left;width:83.333%;margin-left:8.333%;margin-right:8.333%;text-align:center}
+.footer-wrap h6{color:#bfbfbf;font-family:'PT Sans Narrow',sans-serif;font-weight:400;font-size:13px;margin:0;letter-spacing:.5px;line-height:1.6}
+.footer-wrap a{color:#bfbfbf;border-bottom:0}
+.footer-wrap a:hover{color:#fff}
+
+/* Responsive — reference widens gutters at larger breakpoints */
+@media (min-width:48em){
+    .site-name{width:16.666%;margin-left:4.166%;margin-right:4.166%;display:inline;float:left}
+    .top-navigation{width:75%;margin:0;display:inline;float:left}
+    .top-navigation ul{text-align:right}
+}
+@media (min-width:62em){
+    .site-name{width:12.5%;margin-left:16.666%;margin-right:0}
+    .top-navigation{width:66.666%;margin:0}
+    .footer-wrap footer{width:50%;margin-left:25%;margin-right:25%}
+    .article-author-top{width:16.666%;margin-left:16.666%;margin-right:4.166%}
+    article{width:54.166%;margin-right:8.333%}
+}
+
+/* Mobile: stack everything */
+@media (max-width:47.99em){
+    body{font-size:16px}
+    .navigation-wrapper{padding:1.5em 0 1.5em}
+    .site-name,.top-navigation,.article-author-top,article,.footer-wrap footer{width:auto;margin:0 1.5em;float:none}
+    .top-navigation li{display:inline-block;margin:0 15px 8px 0;font-size:15px}
+    .article-author-top{margin-bottom:2em;text-align:left}
+    .article-author-top img.bio-photo{margin-bottom:1em}
+    .article-wrap h1{font-size:36px}
+    .article-wrap h2{font-size:26px}
+    img.floatpic{float:none;width:100%;margin:0 0 1em}
+    .paper-fig{float:none;width:100%;margin:0 0 1em}
+    .awards-list .award-meta{float:none;display:block;margin:0}
+}
+</style>
+</head>
+
+<body>
+
+<a href="#main" class="skip-link" data-en="Skip to content" data-zh="跳到正文">Skip to content</a>
+
+<!-- ===================== TOP NAV ===================== -->
+<div class="navigation-wrapper">
+    <div class="site-name">
+        <a href="#">Zongying Lin</a>
+    </div>
+    <div class="top-navigation">
+        <nav role="navigation">
+            <ul>
+                <li><a href="#about" class="top-navigation-current" data-en="About Me" data-zh="关于我">About Me</a></li>
+                <li><a href="#publications" data-en="Publications" data-zh="论文">Publications</a></li>
+                <li><a href="#experience" data-en="Experience" data-zh="经历">Experience</a></li>
+                <li><a href="#awards" data-en="Awards" data-zh="荣誉">Awards</a></li>
+                <li><a href="#news" data-en="News" data-zh="动态">News</a></li>
+                <li><button type="button" class="lang-switch" onclick="toggleLang()"><span id="langLabel">中文</span></button></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- ===================== MAIN ===================== -->
+<div id="main" role="main">
+
+    <!-- Sidebar: photo + contacts -->
+    <div class="article-author-top">
+        <img src="avatar.jpg" class="bio-photo" alt="Zongying Lin bio photo" width="100" height="100">
+        <div class="bio-spacer"></div>
+        <p><a href="mailto:linzongying@stu.pku.edu.cn"><i class="fas fa-envelope" aria-hidden="true"></i> Email (PKU)</a></p>
+        <p><a href="mailto:linzy191119@gmail.com"><i class="fab fa-google" aria-hidden="true"></i> Gmail</a></p>
+        <p><a href="#" onclick="showWechat(event)"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a></p>
+        <p><a href="https://github.com/" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Github</a></p>
+        <p><a href="https://scholar.google.com/citations?user=-XWPfk4AAAAJ" target="_blank" rel="noopener"><i class="ai ai-google-scholar-square" aria-hidden="true"></i> Google Scholar</a></p>
+    </div>
+
+    <!-- Article content -->
+    <article>
+        <div class="article-wrap">
+
+            <!-- ABOUT ME -->
+            <h1 id="about" data-en="About Me" data-zh="关于我">About Me</h1>
+
+            <p class="no-indent">
+                <img src="portrait.jpg" class="floatpic" alt="Zongying Lin portrait">
+                <span data-en="Here is " data-zh="你好，这里是 ">Here is </span><strong>Zongying Lin (林宗莹)</strong>.<br>
+            </p>
+
+            <p data-en='I am a M.S. student in Computer Applied Technology at the School of Electronic and Computer Engineering, <a href="https://www.pku.edu.cn/" target="_blank" rel="noopener">Peking University</a> (PKU), supervised by <strong>Prof. Yonghong Tian</strong> and co-advised by <strong>Prof. Li Yuan</strong>. Previously, I received dual Bachelor&rsquo;s degrees in <strong>Software Engineering</strong> and <strong>Biology</strong> from <a href="https://www.scu.edu.cn/" target="_blank" rel="noopener">Sichuan University</a> (SCU), where I was enrolled in the Computational Biology Experimental Class.'
+               data-zh='我是<a href="https://www.pku.edu.cn/" target="_blank" rel="noopener">北京大学</a>信息工程学院计算机应用技术硕士研究生，导师为<strong>田永鸿</strong>教授，指导老师为<strong>袁粒</strong>老师。此前于<a href="https://www.scu.edu.cn/" target="_blank" rel="noopener">四川大学</a>计算生物学交叉实验班，获<strong>软件工程</strong>与<strong>生物学</strong>双学位。'>
+                I am a M.S. student in Computer Applied Technology at the School of Electronic and Computer Engineering, <a href="https://www.pku.edu.cn/" target="_blank" rel="noopener">Peking University</a> (PKU), supervised by <strong>Prof. Yonghong Tian</strong> and co-advised by <strong>Prof. Li Yuan</strong>. Previously, I received dual Bachelor&rsquo;s degrees in <strong>Software Engineering</strong> and <strong>Biology</strong> from <a href="https://www.scu.edu.cn/" target="_blank" rel="noopener">Sichuan University</a> (SCU), where I was enrolled in the Computational Biology Experimental Class.
+            </p>
+
+            <p data-en='My research focuses on <strong>AI for Science</strong>, with two complementary directions: (i) advancing <strong>generative AI models themselves</strong> &mdash; including diffusion models and large language models, and (ii) applying these models to <strong>scientific domains</strong>, specifically <strong>protein design</strong>, <strong>molecular generation</strong>, and <strong>drug discovery</strong>. To date, I have <strong>9 high-impact papers</strong> published or under submission, accumulating <strong><span class="js-citations">187+</span> citations</strong>, including first-author work at CCF-A venues such as <em>SCIENCE CHINA Information Sciences</em>.'
+               data-zh='我的研究方向为<strong>科学智能（AI for Science）</strong>，涵盖两个方面：一方面是<strong>AI 模型本身</strong>，包括扩散模型、大语言模型等；另一方面是这些 AI 模型在<strong>科学领域的应用</strong>，具体为<strong>蛋白质设计</strong>、<strong>分子生成</strong>与<strong>药物发现</strong>。再投和发表 <strong>9 篇高水平论文</strong>，累计引用 <strong><span class="js-citations">187+</span></strong>，其中包括发表于 <em>中国科学：信息科学</em> 等 CCF-A 期刊的一作成果。'>
+                My research focuses on <strong>AI for Science</strong>, with two complementary directions: (i) advancing <strong>generative AI models themselves</strong> &mdash; including diffusion models and large language models, and (ii) applying these models to <strong>scientific domains</strong>, specifically <strong>protein design</strong>, <strong>molecular generation</strong>, and <strong>drug discovery</strong>. To date, I have <strong>9 high-impact papers</strong> published or under submission, accumulating <strong><span class="js-citations">187+</span> citations</strong>, including first-author work at CCF-A venues such as <em>SCIENCE CHINA Information Sciences</em>.
+            </p>
+
+            <!-- Live Scholar stats -->
+            <div class="scholar-stats" id="scholarStats" aria-label="Google Scholar metrics (auto-updated daily)">
+                <div class="ss-item"><span class="ss-num" data-field="citations_all">&mdash;</span><span class="ss-label" data-en="Citations" data-zh="引用">Citations</span></div>
+                <div class="ss-item"><span class="ss-num" data-field="h_index_all">&mdash;</span><span class="ss-label">h-index</span></div>
+                <div class="ss-item"><span class="ss-num" data-field="i10_index_all">&mdash;</span><span class="ss-label">i10-index</span></div>
+                <div class="ss-item"><span class="ss-num" data-field="paper_count">&mdash;</span><span class="ss-label" data-en="Papers" data-zh="论文">Papers</span></div>
+                <div class="ss-note">
+                    <a href="https://scholar.google.com/citations?user=-XWPfk4AAAAJ" target="_blank" rel="noopener">
+                        <i class="ai ai-google-scholar" aria-hidden="true"></i>&nbsp;<span data-en='Live from <strong>Google Scholar</strong>' data-zh='数据来自 <strong>Google Scholar</strong>'>Live from <strong>Google Scholar</strong></span>
+                    </a>
+                    &nbsp;&middot;&nbsp;
+                    <span class="ss-updated" data-en="updated" data-zh="更新于">updated</span>
+                    <span id="scholarUpdated">&mdash;</span>
+                </div>
+            </div>
+
+            <p data-en='If you are interested in any aspect of my work, I am always open to discussions and collaborations. Feel free to reach out via <strong>linzongying [at] stu.pku.edu.cn</strong> or <strong>linzy191119 [at] gmail.com</strong>, or add me on WeChat <strong>lzyyy1119</strong> (please state the purpose when adding, thank you!).'
+               data-zh='欢迎任何对我的研究感兴趣的朋友交流合作。来信请至 <strong>linzongying [at] stu.pku.edu.cn</strong> 或 <strong>linzy191119 [at] gmail.com</strong>，也可通过微信 <strong>lzyyy1119</strong> 添加我（请务必注明来意，谢谢！）。'>
+                If you are interested in any aspect of my work, I am always open to discussions and collaborations. Feel free to reach out via <strong>linzongying [at] stu.pku.edu.cn</strong> or <strong>linzy191119 [at] gmail.com</strong>, or add me on WeChat <strong>lzyyy1119</strong> (please state the purpose when adding, thank you!).
+            </p>
+
+            <hr>
+
+            <!-- RESEARCH INTERESTS -->
+            <h2 id="research-interests" data-en="Research Interests" data-zh="研究兴趣">Research Interests</h2>
+            <ul>
+                <li data-en="AI for Science" data-zh="科学智能（AI for Science）">AI for Science</li>
+                <li data-en="Large Language Models (LLMs)" data-zh="大语言模型（LLMs）">Large Language Models (LLMs)</li>
+                <li data-en="Diffusion Models" data-zh="扩散模型（Diffusion Models）">Diffusion Models</li>
+                <li data-en="Multimodal Machine Learning" data-zh="多模态机器学习">Multimodal Machine Learning</li>
+                <li data-en="Protein Sequence &amp; Structure Design" data-zh="蛋白质序列与结构设计">Protein Sequence &amp; Structure Design</li>
+            </ul>
+
+            <hr>
+
+            <!-- EDUCATION -->
+            <h2 id="education" data-en="Education" data-zh="教育经历">Education</h2>
+
+            <div class="entry">
+                <h4 data-en="Peking University (PKU)" data-zh="北京大学">Peking University (PKU)</h4>
+                <span class="when" data-en="Sep 2023 &mdash; Jun 2026 (Expected)" data-zh="2023.09 — 2026.06（预计）">Sep 2023 &mdash; Jun 2026 (Expected)</span>
+                <p data-en='M.S. in Computer Applied Technology, School of Electronic and Computer Engineering. Advised by <strong>Prof. Yonghong Tian</strong> and co-advised by <strong>Prof. Li Yuan</strong>. Ranked <strong>3rd</strong> in the program. Recipient of the <strong>National Scholarship</strong>, <strong>Merit Student</strong> (San Hao, &times;2), and <strong>Outstanding Research Award</strong>.'
+                   data-zh='计算机应用技术硕士，信息工程学院。导师为<strong>田永鸿</strong>教授，指导老师为<strong>袁粒</strong>老师。综合排名<strong>第三</strong>。获<strong>国家奖学金</strong>、<strong>三好学生</strong>（×2）与<strong>科研优秀奖</strong>。'>
+                    M.S. in Computer Applied Technology, School of Electronic and Computer Engineering. Advised by <strong>Prof. Yonghong Tian</strong> and co-advised by <strong>Prof. Li Yuan</strong>. Ranked <strong>3rd</strong> in the program. Recipient of the <strong>National Scholarship</strong>, <strong>Merit Student</strong> (San Hao, &times;2), and <strong>Outstanding Research Award</strong>.
+                </p>
+            </div>
+
+            <div class="entry">
+                <h4 data-en="Sichuan University (SCU)" data-zh="四川大学">Sichuan University (SCU)</h4>
+                <span class="when" data-en="Sep 2019 &mdash; Jun 2023" data-zh="2019.09 — 2023.06">Sep 2019 &mdash; Jun 2023</span>
+                <p data-en='Dual B.S. in <strong>Software Engineering</strong> and <strong>Biology</strong>, Computational Biology Experimental Class. Ranked <strong>3rd</strong>. President of Zili Society; Vice-President of the Bio-Innovation Research Association.'
+                   data-zh='<strong>软件工程</strong>与<strong>生物学</strong>双学位学士，计算生物学交叉实验班。综合排名<strong>第三</strong>。自力社社长、生物创研协会副会长。'>
+                    Dual B.S. in <strong>Software Engineering</strong> and <strong>Biology</strong>, Computational Biology Experimental Class. Ranked <strong>3rd</strong>. President of Zili Society; Vice-President of the Bio-Innovation Research Association.
+                </p>
+            </div>
+
+            <hr>
+
+            <!-- PUBLICATIONS -->
+            <h2 id="publications" data-en="Publications" data-zh="论文发表">Publications</h2>
+
+            <p class="no-indent" style="font-size:15px;color:#666">
+                <span data-en='Selected papers below. Full list on ' data-zh='以下为精选论文。完整列表请见 '>Selected papers below. Full list on </span><a href="https://scholar.google.com/citations?user=-XWPfk4AAAAJ" target="_blank" rel="noopener">Google Scholar</a>. <span data-en="* denotes equal contribution." data-zh="* 表示共同第一作者。">* denotes equal contribution.</span>
+            </p>
+
+            <div class="paper-item">
+                <div class="paper-fig">
+                    <a href="https://link.springer.com/article/10.1007/s11432-024-4296-6" target="_blank" rel="noopener"><img src="paper_thumbs/taxdiff.png" alt="TaxDiff figure" loading="lazy" width="560" height="420"></a>
+                </div>
+                <div class="paper-body">
+                    <span class="venue top">SCIENCE CHINA Information Sciences · CCF-A · SCI Q1 Top · IF&nbsp;7.621</span>
+                    <h4>TaxDiff: Taxonomic-Guided Diffusion Model for Protein Sequence Generation</h4>
+                    <p class="authors"><span class="me">Zongying Lin</span>, Hao Li, Liuzhenghao Lv, <em>et al.</em></p>
+                    <p class="paper-meta"><em>SCIENCE CHINA Information Sciences</em>, 2025&nbsp;·&nbsp;14 citations&nbsp;·&nbsp;<strong>First Author</strong></p>
+                    <p class="paper-links">
+                        <a href="https://link.springer.com/article/10.1007/s11432-024-4296-6" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i>Paper</a>
+                        <a href="https://arxiv.org/abs/2402.17156" target="_blank" rel="noopener"><i class="fas fa-file-alt" aria-hidden="true"></i>arXiv</a>
+                        <a href="https://github.com/PKU-YuanGroup/TaxDiff" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>Code</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-fig">
+                    <a href="https://ieeexplore.ieee.org/document/10979347" target="_blank" rel="noopener"><img src="paper_thumbs/prollama.png" alt="ProLLaMA figure" loading="lazy" width="560" height="420"></a>
+                </div>
+                <div class="paper-body">
+                    <span class="venue">IEEE Transactions on Artificial Intelligence</span>
+                    <h4>ProLLaMA: A Protein Large Language Model for Multi-Task Protein Language Processing</h4>
+                    <p class="authors">Liuzhenghao Lv, <span class="me">Zongying Lin</span>, Hao Li, <em>et al.</em></p>
+                    <p class="paper-meta"><em>IEEE Trans. on Artificial Intelligence</em>, 2025&nbsp;·&nbsp;110+ citations&nbsp;·&nbsp;<strong>Second Author</strong></p>
+                    <p class="paper-links">
+                        <a href="https://ieeexplore.ieee.org/document/10979347" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i>Paper</a>
+                        <a href="https://arxiv.org/abs/2402.16445" target="_blank" rel="noopener"><i class="fas fa-file-alt" aria-hidden="true"></i>arXiv</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-fig">
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_23" target="_blank" rel="noopener"><img src="paper_thumbs/multi_transsp.png" alt="Multi-TransSP architecture" loading="lazy" width="560" height="420"></a>
+                </div>
+                <div class="paper-body">
+                    <span class="venue">MICCAI 2022 · CCF-B</span>
+                    <h4>Multi-TransSP: Multimodal Transformer for Survival Prediction of Nasopharyngeal Carcinoma Patients</h4>
+                    <p class="authors">Hanci Zheng<span class="star">*</span>, <span class="me">Zongying Lin</span><span class="star">*</span>, Q. Zhou, <em>et al.</em></p>
+                    <p class="paper-meta"><em>MICCAI 2022</em>&nbsp;·&nbsp;50 citations&nbsp;·&nbsp;<strong>Co-first Author</strong></p>
+                    <p class="paper-links">
+                        <a href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_23" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i>Paper</a>
+                        <a href="https://github.com/gluglurice/Multi-TransSP" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>Code</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-fig">
+                    <a href="https://arxiv.org/abs/2410.05804" target="_blank" rel="noopener"><img src="paper_thumbs/casa.png" alt="CASA framework" loading="lazy" width="560" height="420"></a>
+                </div>
+                <div class="paper-body">
+                    <span class="venue">ICME 2025</span>
+                    <h4>CASA: Class-Agnostic Shared Attributes in Vision-Language Models for Efficient Incremental Object Detection</h4>
+                    <p class="authors">Mingyi Guo, Yuyang Liu, Zhiyuan Yan, <span class="me">Zongying Lin</span>, P. Peng, Y. Tian</p>
+                    <p class="paper-meta"><em>ICME 2025</em></p>
+                    <p class="paper-links">
+                        <a href="https://arxiv.org/abs/2410.05804" target="_blank" rel="noopener"><i class="fas fa-file-alt" aria-hidden="true"></i>arXiv</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-fig">
+                    <a href="https://arxiv.org/abs/2412.20888" target="_blank" rel="noopener"><img src="paper_thumbs/chemling.png" alt="Chemical-Linguistic framework" loading="lazy" width="560" height="420"></a>
+                </div>
+                <div class="paper-body">
+                    <span class="venue preprint">arXiv Preprint · 2024</span>
+                    <h4>Navigating Chemical-Linguistic Sharing Space with Heterogeneous Molecular Encoding</h4>
+                    <p class="authors">L. Lv, H. Li, Y. Wang, Z. Yan, Z. Chen, <span class="me">Zongying Lin</span>, <em>et al.</em></p>
+                    <p class="paper-meta"><em>arXiv:2412.20888</em>&nbsp;·&nbsp;6 citations</p>
+                    <p class="paper-links">
+                        <a href="https://arxiv.org/abs/2412.20888" target="_blank" rel="noopener"><i class="fas fa-file-alt" aria-hidden="true"></i>arXiv</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-fig">
+                    <a href="https://arxiv.org/abs/2409.07912" target="_blank" rel="noopener"><img src="paper_thumbs/mg_score.png" alt="MG-Score framework" loading="lazy" width="560" height="420"></a>
+                </div>
+                <div class="paper-body">
+                    <span class="venue preprint">arXiv Preprint · 2024</span>
+                    <h4>Multi-granularity Score-based Generative Framework Enables Efficient Inverse Design of Complex Organics</h4>
+                    <p class="authors">Z. Chen, Y. Wang, L. Lv, H. Li, <span class="me">Zongying Lin</span>, <em>et al.</em></p>
+                    <p class="paper-meta"><em>arXiv:2409.07912</em>&nbsp;·&nbsp;5 citations</p>
+                    <p class="paper-links">
+                        <a href="https://arxiv.org/abs/2409.07912" target="_blank" rel="noopener"><i class="fas fa-file-alt" aria-hidden="true"></i>arXiv</a>
+                    </p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- EXPERIENCE -->
+            <h2 id="experience" data-en="Experience" data-zh="实习经历">Experience</h2>
+
+            <div class="entry">
+                <h4 data-en='Tencent TEG &mdash; Security Platform Department <span class="role">— Applied Research Intern (Algorithm)</span>'
+                    data-zh='腾讯 TEG &mdash; 安全平台部 <span class="role">— 应用研究实习生（算法实习生）</span>'>
+                    Tencent TEG &mdash; Security Platform Department <span class="role">— Applied Research Intern (Algorithm)</span>
+                </h4>
+                <span class="when" data-en="Jan 2026 &mdash; Present" data-zh="2026.01 — 至今">Jan 2026 &mdash; Present</span>
+                <ul>
+                    <li data-en="Researched next-generation CAPTCHA designs to defend against advanced automated attacks." data-zh="负责新形态验证码（Next-gen CAPTCHA）的研究与设计，抵御自动化攻击。">Researched next-generation CAPTCHA designs to defend against advanced automated attacks.</li>
+                    <li data-en="Developed CAPTCHA request routing and scheduling strategy algorithms." data-zh="研发验证码请求策略与调度算法。">Developed CAPTCHA request routing and scheduling strategy algorithms.</li>
+                    <li data-en="Investigated image semantic adversarial attacks and defenses for visual verification scenarios." data-zh="研究图片语义对抗样本的攻击与防御方法，应用于视觉验证场景。">Investigated image semantic adversarial attacks and defenses for visual verification scenarios.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h4 data-en='International Digital Economy Academy (IDEA) <span class="role">— Algorithm Intern, CTO Group</span>'
+                    data-zh='粤港澳大湾区数字经济研究院（IDEA）<span class="role">— 算法实习生，CTO 组</span>'>
+                    International Digital Economy Academy (IDEA) <span class="role">— Algorithm Intern, CTO Group</span>
+                </h4>
+                <span class="when" data-en="May 2025 &mdash; Sep 2025" data-zh="2025.05 — 2025.09">May 2025 &mdash; Sep 2025</span>
+                <ul>
+                    <li data-en="Explored protein generation via diffusion models conditioned on protein complexes." data-zh="探索基于蛋白质复合物条件的扩散模型蛋白质生成。">Explored protein generation via diffusion models conditioned on protein complexes.</li>
+                    <li data-en="Designed screening algorithms for protein&ndash;protein interaction complexes." data-zh="设计并实现蛋白质—蛋白质相互作用复合物筛选算法。">Designed screening algorithms for protein&ndash;protein interaction complexes.</li>
+                    <li data-en="Built the largest-scale PPI prototype database to date." data-zh="构建最大量级的 PPI 原型数据库。">Built the largest-scale PPI prototype database to date.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <h4 data-en='DP Technology (深势科技) <span class="role">— Algorithm Research Intern</span>'
+                    data-zh='北京深势科技有限公司 <span class="role">— 算法研究实习生</span>'>
+                    DP Technology (深势科技) <span class="role">— Algorithm Research Intern</span>
+                </h4>
+                <span class="when" data-en="Jul 2024 &mdash; May 2025" data-zh="2024.07 — 2025.05">Jul 2024 &mdash; May 2025</span>
+                <ul>
+                    <li data-en="Developed Transformer-based diffusion generative models for drug discovery and molecular design." data-zh="研发基于 Transformer 的扩散生成模型，用于药物发现与分子设计。">Developed Transformer-based diffusion generative models for drug discovery and molecular design.</li>
+                    <li data-en="Built pocket-screening and chiral-molecule design prototype algorithm library." data-zh="构建口袋筛选与手性分子设计原型算法库。">Built pocket-screening and chiral-molecule design prototype algorithm library.</li>
+                    <li data-en="Key modules adopted in downstream drug experiments; produced internal technical reports." data-zh="核心模块被采纳用于后续创新药实验，形成部门内部技术报告。">Key modules adopted in downstream drug experiments; produced internal technical reports.</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <!-- AWARDS -->
+            <h2 id="awards" data-en="Awards &amp; Honors" data-zh="荣誉奖项">Awards &amp; Honors</h2>
+            <ul class="awards-list">
+                <li><strong data-en="National Scholarship" data-zh="国家奖学金">National Scholarship</strong> <span class="award-meta" data-en="Peking University &middot; 2024" data-zh="北京大学 · 2024">Peking University &middot; 2024</span></li>
+                <li><strong data-en="Merit Student (San Hao) &times;&thinsp;2" data-zh="三好学生（×2）">Merit Student (San Hao) &times;&thinsp;2</strong> <span class="award-meta" data-en="Peking University &middot; 2024, 2025" data-zh="北京大学 · 2024、2025">Peking University &middot; 2024, 2025</span></li>
+                <li><strong data-en="Outstanding Research Award" data-zh="科研优秀奖">Outstanding Research Award</strong> <span class="award-meta" data-en="Peking University &middot; 2024" data-zh="北京大学 · 2024">Peking University &middot; 2024</span></li>
+                <li><strong data-en="PKU Academic Excellence Award" data-zh="北京大学学习优秀奖">PKU Academic Excellence Award</strong> <span class="award-meta" data-en="Peking University &middot; 2024" data-zh="北京大学 · 2024">Peking University &middot; 2024</span></li>
+                <li><strong data-en="National Encouragement Scholarship (&times;2)" data-zh="国家励志奖学金（×2）">National Encouragement Scholarship (&times;2)</strong> <span class="award-meta" data-en="Sichuan University &middot; 2020&ndash;2023" data-zh="四川大学 · 2020—2023">Sichuan University &middot; 2020&ndash;2023</span></li>
+                <li><strong data-en="MCM/ICM Meritorious Winner" data-zh="美国大学生数学建模竞赛一等奖">MCM/ICM Meritorious Winner</strong> <span class="award-meta" data-en="Top 7% internationally &middot; 2022" data-zh="国际级 · 前 7% · 2022">Top 7% internationally &middot; 2022</span></li>
+                <li><strong data-en="National Optoelectronic Design &mdash; Best Creativity" data-zh="全国大学生光电设计竞赛 · 最佳创意奖">National Optoelectronic Design &mdash; Best Creativity</strong> <span class="award-meta" data-en="National-level award &middot; 2022" data-zh="国家级 · 2022">National-level award &middot; 2022</span></li>
+                <li><strong data-en="PKU 31st Sports Meeting &mdash; Team 1st" data-zh="北京大学第 31 届校运会 · 团体第一">PKU 31st Sports Meeting &mdash; Team 1st</strong> <span class="award-meta" data-en="Class Sports Committee Member &middot; 2024" data-zh="班级体育委员 · 2024">Class Sports Committee Member &middot; 2024</span></li>
+            </ul>
+
+            <hr>
+
+            <!-- NEWS -->
+            <h2 id="news" data-en="News and Updates" data-zh="最新动态">News and Updates</h2>
+            <ul class="news-list">
+                <li data-en='<span class="news-date">Jan 2026：</span>Joined <strong>Tencent TEG Security Platform Department</strong> as an Applied Research Intern, working on next-generation CAPTCHA and image semantic adversarial research.'
+                    data-zh='<span class="news-date">2026 年 1 月：</span>加入<strong>腾讯 TEG 安全平台部</strong>，担任应用研究实习生（算法方向），研究新形态验证码与图片语义对抗。'>
+                    <span class="news-date">Jan 2026：</span>Joined <strong>Tencent TEG Security Platform Department</strong> as an Applied Research Intern, working on next-generation CAPTCHA and image semantic adversarial research.
+                </li>
+                <li data-en='<span class="news-date">Sep 2025：</span>Awarded <strong>Merit Student</strong> (San Hao) again at Peking University.'
+                    data-zh='<span class="news-date">2025 年 9 月：</span>再次荣获北京大学<strong>三好学生</strong>荣誉。'>
+                    <span class="news-date">Sep 2025：</span>Awarded <strong>Merit Student</strong> (San Hao) again at Peking University.
+                </li>
+                <li data-en='<span class="news-date">Sep 2024：</span>Awarded the <strong>National Scholarship</strong>, <strong>Merit Student</strong> (San Hao), and <strong>Outstanding Research Award</strong> at Peking University.'
+                    data-zh='<span class="news-date">2024 年 9 月：</span>荣获北京大学<strong>国家奖学金</strong>、<strong>三好学生</strong>与<strong>科研优秀奖</strong>。'>
+                    <span class="news-date">Sep 2024：</span>Awarded the <strong>National Scholarship</strong>, <strong>Merit Student</strong> (San Hao), and <strong>Outstanding Research Award</strong> at Peking University.
+                </li>
+                <li data-en='<span class="news-date">Apr 2025：</span>Our work <strong><em>ProLLaMA</em></strong> has been accepted to <strong><em><a href="https://ieeexplore.ieee.org/document/10979347" target="_blank" rel="noopener">IEEE Transactions on Artificial Intelligence</a></em></strong>, accumulating 110+ citations.'
+                    data-zh='<span class="news-date">2025 年 4 月：</span>我们的工作 <strong><em>ProLLaMA</em></strong> 被 <strong><em><a href="https://ieeexplore.ieee.org/document/10979347" target="_blank" rel="noopener">IEEE Transactions on Artificial Intelligence</a></em></strong> 录用，累计 110+ 引用。'>
+                    <span class="news-date">Apr 2025：</span>Our work <strong><em>ProLLaMA</em></strong> has been accepted to <strong><em><a href="https://ieeexplore.ieee.org/document/10979347" target="_blank" rel="noopener">IEEE Transactions on Artificial Intelligence</a></em></strong>, accumulating 110+ citations.
+                </li>
+                <li data-en='<span class="news-date">Feb 2025：</span>Our first-author work <strong><em>TaxDiff</em></strong> has been accepted to <strong><em><a href="https://link.springer.com/article/10.1007/s11432-024-4296-6" target="_blank" rel="noopener">SCIENCE CHINA Information Sciences</a></em></strong> (CCF-A, SCI Q1 Top).'
+                    data-zh='<span class="news-date">2025 年 2 月：</span>一作论文 <strong><em>TaxDiff</em></strong> 被 <strong><em><a href="https://link.springer.com/article/10.1007/s11432-024-4296-6" target="_blank" rel="noopener">中国科学：信息科学</a></em></strong>（CCF-A，SCI 一区 Top）录用。'>
+                    <span class="news-date">Feb 2025：</span>Our first-author work <strong><em>TaxDiff</em></strong> has been accepted to <strong><em><a href="https://link.springer.com/article/10.1007/s11432-024-4296-6" target="_blank" rel="noopener">SCIENCE CHINA Information Sciences</a></em></strong> (CCF-A, SCI Q1 Top).
+                </li>
+                <li data-en='<span class="news-date">Jan 2025：</span>Our work <strong><em>CASA</em></strong> has been accepted to <strong>ICME 2025</strong> &mdash; Class-Agnostic Shared Attributes for Incremental Object Detection.'
+                    data-zh='<span class="news-date">2025 年 1 月：</span>我们的工作 <strong><em>CASA</em></strong> 被 <strong>ICME 2025</strong> 录用 — 面向增量目标检测的类无关共享属性。'>
+                    <span class="news-date">Jan 2025：</span>Our work <strong><em>CASA</em></strong> has been accepted to <strong>ICME 2025</strong> &mdash; Class-Agnostic Shared Attributes for Incremental Object Detection.
+                </li>
+                <li data-en='<span class="news-date">Sep 2023：</span>Joined <strong>Peking University</strong> as an M.S. student in Computer Applied Technology.'
+                    data-zh='<span class="news-date">2023 年 9 月：</span>进入<strong>北京大学</strong>攻读计算机应用技术硕士学位。'>
+                    <span class="news-date">Sep 2023：</span>Joined <strong>Peking University</strong> as an M.S. student in Computer Applied Technology.
+                </li>
+                <li data-en='<span class="news-date">May 2022：</span>Co-first-author work <strong><em>Multi-TransSP</em></strong> accepted by <strong><em><a href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_23" target="_blank" rel="noopener">MICCAI 2022</a></em></strong> (CCF-B) &mdash; Survival Prediction for Nasopharyngeal Carcinoma.'
+                    data-zh='<span class="news-date">2022 年 5 月：</span>共一论文 <strong><em>Multi-TransSP</em></strong> 被 <strong><em><a href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_23" target="_blank" rel="noopener">MICCAI 2022</a></em></strong>（CCF-B）录用 — 鼻咽癌生存预测。'>
+                    <span class="news-date">May 2022：</span>Co-first-author work <strong><em>Multi-TransSP</em></strong> accepted by <strong><em><a href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_23" target="_blank" rel="noopener">MICCAI 2022</a></em></strong> (CCF-B) &mdash; Survival Prediction for Nasopharyngeal Carcinoma.
+                </li>
+            </ul>
+
+            <p><br></p>
+
+        </div>
+    </article>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer-wrap">
+    <footer>
+        <h6>&copy; 2026 Zongying Lin (林宗莹) &middot; Peking University.<br>
+        Academic homepage inspired by the <a href="https://mademistakes.com/" target="_blank" rel="noopener">Minimal Mistakes</a> theme.</h6>
+    </footer>
+</div>
+
+<!-- WeChat modal -->
+<div class="wechat-modal" id="wechatModal" role="dialog" aria-modal="true" aria-labelledby="wxTitle" onclick="if(event.target===this) closeWechat()">
+    <div class="wx-box">
+        <button class="wx-close" type="button" onclick="closeWechat()" aria-label="Close">×</button>
+        <h3 id="wxTitle" data-en="Add on WeChat" data-zh="微信联系">Add on WeChat</h3>
+        <div class="wx-id" id="wxId">lzyyy1119</div>
+        <p class="wx-note" data-en="Please state the purpose when adding, thank you!" data-zh="请务必注明来意，谢谢！">Please state the purpose when adding, thank you!</p>
+        <button class="wx-copy" type="button" onclick="copyWechat()" id="wxCopyBtn"><span data-en="Copy ID" data-zh="复制 ID">Copy ID</span></button>
+    </div>
+</div>
+
+<!-- FontAwesome loaded via CSS CDN in <head> -->
+
+<script>
+/* ===== WeChat modal ===== */
+function showWechat(e){
+    if(e) e.preventDefault();
+    const m=document.getElementById('wechatModal');
+    m.classList.add('open');
+    document.body.style.overflow='hidden';
+}
+function closeWechat(){
+    const m=document.getElementById('wechatModal');
+    m.classList.remove('open');
+    document.body.style.overflow='';
+    const btn=document.getElementById('wxCopyBtn');
+    const cur=document.documentElement.getAttribute('data-lang');
+    btn.firstElementChild.textContent = cur==='zh' ? '复制 ID' : 'Copy ID';
+}
+function copyWechat(){
+    const id='lzyyy1119';
+    const btn=document.getElementById('wxCopyBtn').firstElementChild;
+    const cur=document.documentElement.getAttribute('data-lang');
+    const ok=cur==='zh'?'已复制 ✓':'Copied ✓';
+    const done=cur==='zh'?'复制 ID':'Copy ID';
+    (navigator.clipboard?navigator.clipboard.writeText(id):Promise.reject())
+        .then(()=>{
+            btn.textContent=ok;
+            setTimeout(()=>{btn.textContent=done;},1600);
+        })
+        .catch(()=>{
+            // Fallback
+            const ta=document.createElement('textarea');
+            ta.value=id;document.body.appendChild(ta);ta.select();
+            try{document.execCommand('copy');btn.textContent=ok;setTimeout(()=>{btn.textContent=done;},1600);}
+            catch(e){prompt('Copy this WeChat ID:',id);}
+            document.body.removeChild(ta);
+        });
+}
+document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') closeWechat();
+});
+
+function toggleLang(){
+    const html=document.documentElement;
+    const cur=html.getAttribute('data-lang');
+    const next=cur==='en'?'zh':'en';
+    html.setAttribute('data-lang',next);
+    html.setAttribute('lang',next==='zh'?'zh-CN':'en');
+    document.getElementById('langLabel').textContent=next==='zh'?'EN':'中文';
+    document.querySelectorAll('[data-'+next+']').forEach(el=>{
+        const v=el.getAttribute('data-'+next);
+        if(v!==null) el.innerHTML=v;
+    });
+    localStorage.setItem('lin-lang',next);
+}
+(function(){
+    const s=localStorage.getItem('lin-lang');
+    if(s==='zh'){
+        document.documentElement.setAttribute('data-lang','zh');
+        document.documentElement.setAttribute('lang','zh-CN');
+        document.getElementById('langLabel').textContent='EN';
+        document.querySelectorAll('[data-zh]').forEach(el=>{
+            const v=el.getAttribute('data-zh');
+            if(v!==null) el.innerHTML=v;
+        });
+    }
+})();
+
+/* ========== Live Scholar Stats ==========
+ * Loads scholar.json (generated daily by GitHub Actions / update-scholar.py).
+ * Falls back silently to the placeholder "—" if the file is missing
+ * or when opened directly from the filesystem (file://).
+ */
+(function loadScholar(){
+    const nums = document.querySelectorAll('#scholarStats .ss-num');
+    nums.forEach(n => n.classList.add('updating'));
+
+    fetch('scholar.json?t=' + Date.now(), {cache: 'no-store'})
+        .then(r => {
+            if(!r.ok) throw new Error('scholar.json not found ('+r.status+')');
+            return r.json();
+        })
+        .then(data => {
+            // Fill each ss-num cell
+            nums.forEach(el => {
+                const key = el.getAttribute('data-field');
+                if(data[key] !== undefined && data[key] !== null){
+                    el.classList.remove('updating');
+                    // Subtle count-up animation
+                    animateNumber(el, data[key]);
+                } else {
+                    el.textContent = '—';
+                    el.classList.remove('updating');
+                }
+            });
+            // Inline citations span inside paragraph
+            document.querySelectorAll('.js-citations').forEach(el => {
+                el.textContent = data.citations_all + '+';
+            });
+            // Updated timestamp
+            const u = document.getElementById('scholarUpdated');
+            if(u && data.updated_at_local){
+                u.textContent = data.updated_at_local;
+            }
+        })
+        .catch(err => {
+            // Silent fallback — keep the defaults shown in the DOM
+            nums.forEach(el => {
+                el.classList.remove('updating');
+                if(el.textContent === '—'){
+                    // Static fallback values
+                    const key = el.getAttribute('data-field');
+                    const fallback = {
+                        citations_all: '187+',
+                        h_index_all: '5',
+                        i10_index_all: '3',
+                        paper_count: '9'
+                    };
+                    el.textContent = fallback[key] || '—';
+                }
+            });
+            const u = document.getElementById('scholarUpdated');
+            if(u) u.textContent = 'cache';
+            console.warn('[scholar] live fetch failed, using fallback:', err.message);
+        });
+
+    function animateNumber(el, target){
+        const start = 0;
+        const duration = 900;
+        const t0 = performance.now();
+        function tick(now){
+            const p = Math.min((now - t0) / duration, 1);
+            // easeOutCubic
+            const eased = 1 - Math.pow(1 - p, 3);
+            const cur = Math.round(start + (target - start) * eased);
+            el.textContent = cur;
+            if(p < 1) requestAnimationFrame(tick);
+            else el.textContent = target;
+        }
+        requestAnimationFrame(tick);
+    }
+})();
+</script>
+</body>
+</html>

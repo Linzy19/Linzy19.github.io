@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Private documents (not to be published)
+塔塔网申.pdf
+*.draft.*
+
+# Temporary
+paper_pdfs/
+paper_pdfs_tmp/
+*.log
