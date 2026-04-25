@@ -18,24 +18,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Fetch scholar stats
+        id: fetch
+        continue-on-error: true
         run: python update-scholar.py
 
-      - name: Commit & push if changed
+      - name: Exit gracefully if fetch failed
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "::warning::Scholar fetch failed (likely rate-limited by Google). Skipping commit."
+          exit 0
+
+      - name: Commit & push if stats changed
+        if: steps.fetch.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet scholar.json; then
-            echo "No changes to scholar.json"
+
+          # Only compare the numerical fields; ignore timestamp-only changes
+          # so we don't spam commits when nothing actually changed.
+          if ! git diff --quiet scholar.json; then
+            # Check whether meaningful fields (excluding updated_at*) changed
+            changed=$(git diff scholar.json | grep -E '^\+[^+]' | grep -v 'updated_at' | grep -v '"source"' || true)
+            if [ -n "$changed" ]; then
+              git add scholar.json
+              git commit -m "chore: update scholar stats [skip ci]"
+              git push
+              echo "✅ Scholar stats updated."
+            else
+              echo "ℹ️  Only timestamp changed — skipping commit."
+              git checkout scholar.json
+            fi
           else
-            git add scholar.json
-            git commit -m "chore: update scholar stats [skip ci]"
-            git push
+            echo "ℹ️  No changes to scholar.json."
           fi
