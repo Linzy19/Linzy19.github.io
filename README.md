@@ -53,7 +53,6 @@ For the Action to push back to the repo, go to:
 │   ├── chemling.png
 │   ├── mg_score.png
 │   └── casa.png
-├── 林宗莹-北京大学-计算机应用技术-硕士.pdf   # CV (optional)
 └── .github/workflows/
     └── update-scholar.yml     # Daily cron
 ```
