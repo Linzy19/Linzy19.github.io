@@ -1,95 +1,135 @@
 #!/usr/bin/env python3
 """
-Fetch latest Google Scholar stats and save to scholar.json.
+Fetch latest Google Scholar stats via SerpAPI and save to scholar.json.
+
 Runs manually or via GitHub Actions (see .github/workflows/update-scholar.yml).
 
-Exit codes:
-  0 — success (or Google temporarily unreachable; kept existing JSON)
-  1 — fatal error (malformed local scholar.json, disk error, etc.)
+Requirements:
+  * Environment variable SERPAPI_KEY must be set (free tier: 100 searches/month).
+    Get a key at https://serpapi.com/
 
-This script is *tolerant* to transient failures: if Google returns a
-CAPTCHA / rate-limit page, we keep the previous scholar.json untouched
-and exit 0 so the GitHub Action doesn't falsely report failure.
+Exit codes:
+  0 — success (or transient failure with existing JSON kept untouched)
+  1 — fatal error (no SERPAPI_KEY without fallback, malformed JSON, disk error)
+
+Behavior:
+  * If SerpAPI returns an error or is unreachable AND a previous scholar.json
+    exists, we keep it and exit 0 so the GitHub Action doesn't false-fail.
 """
 import json
 import os
-import re
 import ssl
 import sys
 import time
+import urllib.parse
 import urllib.request
 
 USER = '-XWPfk4AAAAJ'
-URL = f'https://scholar.google.com/citations?user={USER}&hl=en'
 OUT = 'scholar.json'
+SERPAPI_ENDPOINT = 'https://serpapi.com/search.json'
 
 
-def fetch_scholar():
+def fetch_scholar_via_serpapi(api_key: str) -> dict:
+    """Fetch author profile + stats from SerpAPI google_scholar_author engine."""
     ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
 
-    req = urllib.request.Request(URL, headers={
-        'User-Agent': (
-            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
-            'AppleWebKit/537.36 (KHTML, like Gecko) '
-            'Chrome/120.0 Safari/537.36'
-        ),
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Accept': 'text/html,application/xhtml+xml',
+    params = {
+        'engine': 'google_scholar_author',
+        'author_id': USER,
+        'hl': 'en',
+        'api_key': api_key,
+    }
+    url = f'{SERPAPI_ENDPOINT}?{urllib.parse.urlencode(params)}'
+
+    req = urllib.request.Request(url, headers={
+        'User-Agent': 'scholar-updater/1.0',
+        'Accept': 'application/json',
     })
 
-    with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
-        html = r.read().decode('utf-8', errors='ignore')
+    with urllib.request.urlopen(req, context=ctx, timeout=60) as r:
+        raw = r.read().decode('utf-8', errors='ignore')
 
-    # Detect CAPTCHA / unusual traffic block pages
-    low = html.lower()
-    if 'unusual traffic' in low or 'captcha' in low or 'sorry' in low[:2000]:
-        raise RuntimeError('Google Scholar is rate-limiting this request (CAPTCHA page).')
+    data = json.loads(raw)
 
-    # Six number cells in the stats table:
-    # citations(all), citations(since X), h(all), h(since X), i10(all), i10(since X)
-    nums = re.findall(r'gsc_rsb_std">(\d+)', html)
-    if len(nums) < 6:
-        raise RuntimeError(
-            f'Could not parse stats table. Found {len(nums)} numbers '
-            f'(expected 6). HTML length: {len(html)}'
-        )
+    if 'error' in data:
+        raise RuntimeError(f"SerpAPI error: {data['error']}")
 
-    # Count publication rows
-    paper_count = len(re.findall(r'class="gsc_a_tr"', html))
+    author = data.get('author', {}) or {}
+    cited_by = data.get('cited_by', {}) or {}
+    articles = data.get('articles', []) or []
 
-    # Extract display name
-    name_m = re.search(r'<div id="gsc_prf_in">([^<]+)</div>', html)
-    name = name_m.group(1) if name_m else 'Zongying Lin'
+    # cited_by.table is a list of dicts like:
+    # [{"citations": {"all": 123, "since_2020": 100}},
+    #  {"h_index":  {"all":  7,  "since_2020":   6}},
+    #  {"i10_index":{"all":  5,  "since_2020":   4}}]
+    table = cited_by.get('table', []) or []
+
+    def pick(metric_key: str, span: str) -> int:
+        for row in table:
+            if metric_key in row:
+                val = row[metric_key].get(span)
+                if val is not None:
+                    return int(val)
+        return 0
+
+    citations_all    = pick('citations', 'all')
+    citations_recent = next(
+        (int(row['citations'][k])
+         for row in table if 'citations' in row
+         for k in row['citations'] if k.startswith('since_')),
+        0,
+    )
+    h_index_all    = pick('h_index', 'all')
+    h_index_recent = next(
+        (int(row['h_index'][k])
+         for row in table if 'h_index' in row
+         for k in row['h_index'] if k.startswith('since_')),
+        0,
+    )
+    i10_index_all    = pick('i10_index', 'all')
+    i10_index_recent = next(
+        (int(row['i10_index'][k])
+         for row in table if 'i10_index' in row
+         for k in row['i10_index'] if k.startswith('since_')),
+        0,
+    )
+
+    name = author.get('name') or 'Zongying Lin'
+    paper_count = len(articles)
 
     return {
         'user': USER,
         'name': name,
         'paper_count': paper_count,
-        'citations_all': int(nums[0]),
-        'citations_recent': int(nums[1]),
-        'h_index_all': int(nums[2]),
-        'h_index_recent': int(nums[3]),
-        'i10_index_all': int(nums[4]),
-        'i10_index_recent': int(nums[5]),
+        'citations_all': citations_all,
+        'citations_recent': citations_recent,
+        'h_index_all': h_index_all,
+        'h_index_recent': h_index_recent,
+        'i10_index_all': i10_index_all,
+        'i10_index_recent': i10_index_recent,
         'updated_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
         'updated_at_local': time.strftime('%Y-%m-%d %H:%M UTC'),
-        'source': URL,
+        'source': f'https://scholar.google.com/citations?user={USER}&hl=en',
+        'provider': 'serpapi',
     }
 
 
-def main():
+def main() -> int:
+    api_key = os.environ.get('SERPAPI_KEY', '').strip()
+    if not api_key:
+        print('[ERROR] SERPAPI_KEY environment variable is not set.', file=sys.stderr)
+        if os.path.exists(OUT):
+            print(f'[INFO] Keeping existing {OUT} unchanged.', file=sys.stderr)
+            return 0
+        return 1
+
     try:
-        data = fetch_scholar()
+        data = fetch_scholar_via_serpapi(api_key)
     except Exception as e:
         print(f'[WARN] Scholar fetch failed: {e}', file=sys.stderr)
-        # Graceful exit — keep existing scholar.json intact.
-        # GitHub Action will skip the commit step.
         if os.path.exists(OUT):
-            print(f'[INFO] Keeping existing {OUT} unchanged.')
+            print(f'[INFO] Keeping existing {OUT} unchanged.', file=sys.stderr)
             return 0
-        # No existing file — that's a real problem.
         print(f'[ERROR] No existing {OUT} to fall back to.', file=sys.stderr)
         return 1
 

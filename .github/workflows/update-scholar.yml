@@ -1,61 +1,43 @@
-name: Update Scholar Stats
+name: Update Google Scholar Stats
 
 on:
   schedule:
-    # Every day at 00:00 UTC (08:00 Beijing time)
-    - cron: '0 0 * * *'
-  workflow_dispatch:  # Allow manual trigger from GitHub UI
+    # 每天 UTC 03:00（北京时间 11:00）运行
+    - cron: '0 3 * * *'
+  workflow_dispatch:        # 允许在 Actions 页面手动触发
   push:
     paths:
       - 'update-scholar.py'
       - '.github/workflows/update-scholar.yml'
 
 permissions:
-  contents: write
+  contents: write           # 允许把更新后的 scholar.json 提交回仓库
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
 
-      - name: Fetch scholar stats
-        id: fetch
-        continue-on-error: true
+      - name: Fetch latest Scholar stats (via SerpAPI)
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python update-scholar.py
 
-      - name: Exit gracefully if fetch failed
-        if: steps.fetch.outcome == 'failure'
+      - name: Commit & push if changed
         run: |
-          echo "::warning::Scholar fetch failed (likely rate-limited by Google). Skipping commit."
-          exit 0
-
-      - name: Commit & push if stats changed
-        if: steps.fetch.outcome == 'success'
-        run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Only compare the numerical fields; ignore timestamp-only changes
-          # so we don't spam commits when nothing actually changed.
-          if ! git diff --quiet scholar.json; then
-            # Check whether meaningful fields (excluding updated_at*) changed
-            changed=$(git diff scholar.json | grep -E '^\+[^+]' | grep -v 'updated_at' | grep -v '"source"' || true)
-            if [ -n "$changed" ]; then
-              git add scholar.json
-              git commit -m "chore: update scholar stats [skip ci]"
-              git push
-              echo "✅ Scholar stats updated."
-            else
-              echo "ℹ️  Only timestamp changed — skipping commit."
-              git checkout scholar.json
-            fi
+          if git diff --quiet scholar.json; then
+            echo "No changes to scholar.json — skip commit."
           else
-            echo "ℹ️  No changes to scholar.json."
+            git add scholar.json
+            git commit -m "chore: auto-update Google Scholar stats"
+            git push
           fi
