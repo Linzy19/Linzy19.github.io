@@ -2,7 +2,7 @@
 
 > Personal academic homepage of **Zongying Lin (林宗莹)**, M.S. student at Peking University.  
 > Style inspired by [shaodong233.github.io](https://shaodong233.github.io/) (Minimal Mistakes theme).  
-> Live at: **<https://linzongying.github.io>** <!-- change to your actual URL -->
+> Live at: **<https://linzy19.github.io>**
 
 ![screenshot](paper_thumbs/taxdiff.png)
 
@@ -20,9 +20,9 @@
 
 ### Live Scholar Stats
 
-1. [`update-scholar.py`](./update-scholar.py) — Python script that fetches your Scholar profile page and parses the stats table into `scholar.json`.
-2. [`.github/workflows/update-scholar.yml`](./.github/workflows/update-scholar.yml) — GitHub Actions workflow that runs the script **daily at 00:00 UTC (08:00 Beijing)** and auto-commits any changes.
-3. **Front-end** — `index.html` fetches `scholar.json` on page load and animates the numbers into the stats cells. Silently falls back to cached values if the file is unreachable.
+1. [`update-scholar.py`](./update-scholar.py) — Python script that uses SerpAPI to fetch Scholar metrics and per-paper citation counts into `scholar.json`. Set `SERPAPI_KEY` as a repository secret.
+2. [`.github/workflows/update-scholar.yml`](./.github/workflows/update-scholar.yml) — GitHub Actions workflow that runs the script **daily at 03:00 UTC (11:00 Beijing)** and auto-commits any changes.
+3. **Front-end** — `index.html` fetches `scholar.json` on page load and animates the numbers into the stats cells. Updates the bilingual introduction, metrics, and paper citation counts. Keeps the dated HTML snapshot if the file is unreachable. The paper count includes preprints listed on Scholar, not unpublished submissions.
 
 ### Manual refresh
 

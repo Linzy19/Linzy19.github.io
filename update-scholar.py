@@ -37,6 +37,7 @@ def fetch_scholar_via_serpapi(api_key: str) -> dict:
         'engine': 'google_scholar_author',
         'author_id': USER,
         'hl': 'en',
+        'num': 100,
         'api_key': api_key,
     }
     url = f'{SERPAPI_ENDPOINT}?{urllib.parse.urlencode(params)}'
@@ -57,6 +58,8 @@ def fetch_scholar_via_serpapi(api_key: str) -> dict:
     author = data.get('author', {}) or {}
     cited_by = data.get('cited_by', {}) or {}
     articles = data.get('articles', []) or []
+    if data.get('serpapi_pagination', {}).get('next'):
+        raise RuntimeError('Incomplete article list; refusing to publish a partial paper count')
 
     # cited_by.table is a list of dicts like:
     # [{"citations": {"all": 123, "since_2020": 100}},
@@ -96,6 +99,15 @@ def fetch_scholar_via_serpapi(api_key: str) -> dict:
 
     name = author.get('name') or 'Zongying Lin'
     paper_count = len(articles)
+    paper_citations = []
+    for article in articles:
+        citation_id = article.get('citation_id', '')
+        value = (article.get('cited_by') or {}).get('value')
+        paper_citations.append({
+            'scholar_id': citation_id.rsplit(':', 1)[-1],
+            'title': article.get('title', ''),
+            'citations': int(value) if value is not None else None,
+        })
 
     return {
         'user': USER,
@@ -111,6 +123,7 @@ def fetch_scholar_via_serpapi(api_key: str) -> dict:
         'updated_at_local': time.strftime('%Y-%m-%d %H:%M UTC'),
         'source': f'https://scholar.google.com/citations?user={USER}&hl=en',
         'provider': 'serpapi',
+        'articles': paper_citations,
     }
 
 

@@ -11,5 +11,53 @@
   "updated_at": "2026-10-12T10:04:03Z",
   "updated_at_local": "2026-10-12 10:04 UTC",
   "source": "https://scholar.google.com/citations?user=-XWPfk4AAAAJ&hl=en",
-  "provider": "serpapi"
+  "provider": "serpapi",
+  "articles": [
+    {
+      "scholar_id": "0EnyYjriUFMC",
+      "title": "ProLLaMA: A Protein Large Language Model for Multi-Task Protein Language Processing",
+      "citations": 150
+    },
+    {
+      "scholar_id": "u-x6o8ySG0sC",
+      "title": "Multi-TransSP: Multimodal Transformer for Survival Prediction of Nasopharyngeal Carcinoma Patients",
+      "citations": 56
+    },
+    {
+      "scholar_id": "M3ejUd6NZC8C",
+      "title": "TaxDiff: Taxonomic-Guided Diffusion Model for Protein Sequence Generation",
+      "citations": 19
+    },
+    {
+      "scholar_id": "qxL8FJ1GzNcC",
+      "title": "Navigating Chemical-Linguistic Sharing Space with Heterogeneous Molecular Encoding",
+      "citations": 13
+    },
+    {
+      "scholar_id": "MXK_kJrjxJIC",
+      "title": "SAKPE: A Site Attention Kinetic Parameters Prediction Method for Enzyme Engineering",
+      "citations": 6
+    },
+    {
+      "scholar_id": "W7OEmFMy1HYC",
+      "title": "Multi-granularity Score-based Generative Framework Enables Efficient Inverse Design of Complex Organics",
+      "citations": 6
+    },
+    {
+      "scholar_id": "_kc_bZDykSQC",
+      "title": "TCRspec: A Recognition Interface-Informed Multimodal Method for TCR–pMHC Specificity Prediction",
+      "citations": null
+    },
+    {
+      "scholar_id": "YOwf2qJgpHMC",
+      "title": "Leveraging Domain Motif Assembler for Multi-objective, Multi-domain and Explainable Molecular Design",
+      "citations": null
+    },
+    {
+      "scholar_id": "8k81kl-MbHgC",
+      "title": "CASA: Class-Agnostic Shared Attributes in Vision-Language Models for Efficient Incremental Object Detection",
+      "citations": null
+    }
+  ],
+  "articles_verified_at": "2026-10-12"
 }
