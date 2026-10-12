@@ -8,29 +8,29 @@
   "h_index_recent": 6,
   "i10_index_all": 4,
   "i10_index_recent": 4,
-  "updated_at": "2026-10-12T10:04:03Z",
-  "updated_at_local": "2026-10-12 10:04 UTC",
+  "updated_at": "2026-10-12T11:01:57Z",
+  "updated_at_local": "2026-10-12 11:01 UTC",
   "source": "https://scholar.google.com/citations?user=-XWPfk4AAAAJ&hl=en",
   "provider": "serpapi",
   "articles": [
     {
       "scholar_id": "0EnyYjriUFMC",
-      "title": "ProLLaMA: A Protein Large Language Model for Multi-Task Protein Language Processing",
+      "title": "Prollama: A protein large language model for multi-task protein language processing",
       "citations": 150
     },
     {
       "scholar_id": "u-x6o8ySG0sC",
-      "title": "Multi-TransSP: Multimodal Transformer for Survival Prediction of Nasopharyngeal Carcinoma Patients",
+      "title": "Multi-transsp: Multimodal transformer for survival prediction of nasopharyngeal carcinoma patients",
       "citations": 56
     },
     {
       "scholar_id": "M3ejUd6NZC8C",
-      "title": "TaxDiff: Taxonomic-Guided Diffusion Model for Protein Sequence Generation",
+      "title": "TaxDiff: taxonomic-guided diffusion model for protein sequence generation",
       "citations": 19
     },
     {
       "scholar_id": "qxL8FJ1GzNcC",
-      "title": "Navigating Chemical-Linguistic Sharing Space with Heterogeneous Molecular Encoding",
+      "title": "Navigating chemical-linguistic sharing space with heterogeneous molecular encoding",
       "citations": 13
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "scholar_id": "W7OEmFMy1HYC",
-      "title": "Multi-granularity Score-based Generative Framework Enables Efficient Inverse Design of Complex Organics",
+      "title": "Multi-granularity score-based generative framework enables efficient inverse design of complex organics",
       "citations": 6
     },
     {
@@ -58,6 +58,5 @@
       "title": "CASA: Class-Agnostic Shared Attributes in Vision-Language Models for Efficient Incremental Object Detection",
       "citations": null
     }
-  ],
-  "articles_verified_at": "2026-10-12"
+  ]
 }
