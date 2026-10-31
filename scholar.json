@@ -2,21 +2,21 @@
   "user": "-XWPfk4AAAAJ",
   "name": "Linzongying 林宗莹",
   "paper_count": 9,
-  "citations_all": 253,
-  "citations_recent": 253,
+  "citations_all": 254,
+  "citations_recent": 254,
   "h_index_all": 6,
   "h_index_recent": 6,
   "i10_index_all": 4,
   "i10_index_recent": 4,
-  "updated_at": "2026-10-30T09:23:29Z",
-  "updated_at_local": "2026-10-30 09:23 UTC",
+  "updated_at": "2026-10-31T09:09:10Z",
+  "updated_at_local": "2026-10-31 09:09 UTC",
   "source": "https://scholar.google.com/citations?user=-XWPfk4AAAAJ&hl=en",
   "provider": "serpapi",
   "articles": [
     {
       "scholar_id": "0EnyYjriUFMC",
       "title": "Prollama: A protein large language model for multi-task protein language processing",
-      "citations": 153
+      "citations": 154
     },
     {
       "scholar_id": "u-x6o8ySG0sC",
