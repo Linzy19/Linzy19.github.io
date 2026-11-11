@@ -1,15 +1,15 @@
 {
   "user": "-XWPfk4AAAAJ",
   "name": "Linzongying 林宗莹",
-  "paper_count": 9,
+  "paper_count": 10,
   "citations_all": 254,
   "citations_recent": 254,
   "h_index_all": 6,
   "h_index_recent": 6,
   "i10_index_all": 4,
   "i10_index_recent": 4,
-  "updated_at": "2026-11-10T10:39:32Z",
-  "updated_at_local": "2026-11-10 10:39 UTC",
+  "updated_at": "2026-11-11T10:07:43Z",
+  "updated_at_local": "2026-11-11 10:07 UTC",
   "source": "https://scholar.google.com/citations?user=-XWPfk4AAAAJ&hl=en",
   "provider": "serpapi",
   "articles": [
@@ -42,6 +42,11 @@
       "scholar_id": "W7OEmFMy1HYC",
       "title": "Multi-granularity score-based generative framework enables efficient inverse design of complex organics",
       "citations": 6
+    },
+    {
+      "scholar_id": "aqlVkmm33-oC",
+      "title": "CaptchaBench: A Modality-Stratified Benchmark Dataset for Evaluating Adversarial Perturbation Against VLM-based CAPTCHA Recognition",
+      "citations": null
     },
     {
       "scholar_id": "_kc_bZDykSQC",
